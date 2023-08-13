@@ -2,10 +2,10 @@
     "name": "csharpextensions",
     "displayName": "C# Extensions",
     "description": "C# IDE Extensions for VSCode",
-    "author": "KreativJos",
+    "author": "Bard83",
     "license": "MIT",
     "version": "1.7.3",
-    "publisher": "kreativ-software",
+    "publisher": "bard83",
     "engines": {
         "vscode": "^1.56.0"
     },
@@ -282,7 +282,7 @@
     },
     "__metadata": {
         "id": "80c8f9ff-3535-4b4a-b3db-e88f5752bb18",
-        "publisherDisplayName": "JosKreativ",
+        "publisherDisplayName": "Bard83",
         "publisherId": "4905789e-0ee4-4159-9429-069d1edbd4f4",
         "isPreReleaseVersion": false
     }
