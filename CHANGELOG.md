@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.8.0] - 2023-10-25
+
+### Added
+
+- Import in csproj file is now supported.
+- Implicit usings in now supported.
+- New action provider available: Initialize body expression ctor from properties
+- Record template is now available.
+- Fast endpoints are avaialble on the welcome page.
+- Increased unit tests coverage.
+
+### Fixed
+
+- Setting description for default usings.
+- Solved erro message when action provider commands where invocked.
+
+### Removed
+
+- initializeMemberFromCtor command no longer available.
+
 ## [1.7.3] - 2022-09-09
 
 ### Fixed

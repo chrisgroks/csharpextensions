@@ -180,6 +180,7 @@ export class Extension {
     private static CurrentVscodeExtension: vscode.Extension<any> | undefined = undefined;
     private static Instance: Extension;
     private static KnownExtensionNames = [
+        'bard83.csharpextensions',
         'kreativ-software.csharpextensions',
         'jsw.csharpextensions'
     ];
