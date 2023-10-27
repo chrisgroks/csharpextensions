@@ -47,7 +47,7 @@ jobs:
       if: runner.os != 'Linux'
 
   bump-minor:
-    name: Update Changelog
+    name: Bump patch version
     runs-on: ubuntu-latest
     env:
       PUSH_PACKAGES: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
@@ -62,9 +62,16 @@ jobs:
       - name: Bump version for next release
         if: ${{ env.PUSH_PACKAGES }}
         run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           VERSION=$(perl -ne 'while (m|"version"\W+([\d\.]+)|g) {print "$1"}' package.json)
           NEXT_VERSION=$(echo "$VERSION" | perl -pe 's/^((\d+\.)*)(\d+)(.*)$/$1.($3+1).$4/e')
           echo "Increasing version to $NEXT_VERSION"
           perl -pi -e "s|(\"version\"\W+)([\d\.]+)|\${1}${NEXT_VERSION}|" package.json
           git commit -a -m "Increased version when PR merged to $NEXT_VERSION [skip ci]"
-          git push
+      - name: Push changes
+        if: ${{ env.PUSH_PACKAGES }}
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
