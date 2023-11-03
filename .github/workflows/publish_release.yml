@@ -34,7 +34,7 @@ jobs:
           for asset in $(echo "$ASSETS" | jq -r '.[].name'); do
             if [[ "$asset" == csharpextension* ]]; then
               echo "Publishing extension: $asset"
-              yarn publish --pat ${{ secrets.VSCE_PAT }} --package "$asset"
+              vsce publish --yarn --pat ${{ secrets.VSCE_PAT }} --package "$asset"
             fi
           done
         env:
@@ -65,4 +65,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          branch:  master
