@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
-- Fixed minor issues.
+- Fixed minor issues and missing tests.
 
 ## [1.8.1] - 2023-10-25
 
