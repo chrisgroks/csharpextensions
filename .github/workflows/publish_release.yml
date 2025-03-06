@@ -15,28 +15,20 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v3
 
-      - name: Prepare Package
+      - name: Install vsce CLI
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-
-      - name: Install vsce CLI
-        run: npm i -g @vscode/vsce
+      - run: | 
+          rm -rf node_modules
+          rm yarn.lock
+          yarn cache clean
+          yarn install
+          npm i -g @vscode/vsce
 
       - name: Publish
         run: |
-          RELEASE_ID=$(jq -r '.release.id' $GITHUB_EVENT_PATH)
-
-          ASSETS=$(curl -sS -H "Accept: application/vnd.github.v3+json" \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/${{ github.repository }}/releases/$RELEASE_ID/assets")
-
-          for asset in $(echo "$ASSETS" | jq -r '.[].name'); do
-            if [[ "$asset" == csharpextension* ]]; then
-              echo "Publishing extension: $asset"
-              vsce publish --yarn --pat ${{ secrets.VSCE_PAT }} --package "$asset"
-            fi
-          done
+          vsce publish --yarn --pat ${{ secrets.VSCE_PAT }}
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
           GITHUB_EVENT_PATH: ${{ github.event_path }}

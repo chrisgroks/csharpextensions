@@ -43,6 +43,7 @@ jobs:
       if: runner.os != 'Linux'
   bump-version:
     needs: [test]
+    if: success()
     runs-on: ubuntu-latest
     name: Bump Version
     steps:
@@ -64,6 +65,7 @@ jobs:
 
   changelog:
     needs: [bump-version]
+    if: success()
     runs-on: ubuntu-latest
     name: Generate and Commit Changelog
 
@@ -89,3 +91,70 @@ jobs:
         git add CHANGELOG.md
         git commit -m "docs: :robot: changelog file generated" || echo "No changes to commit"
         git push
+  create_artifact:
+    name: Build extension from latest tag
+    runs-on: ubuntu-latest
+    needs: [changelog]
+    if: success()
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Checkout latest release tag
+        run: |
+          git pull
+          LATEST_TAG=${GITHUB_REF#refs/tags/}
+          git checkout $LATEST_TAG
+          echo "Moved on tag $LATEST_TAG"
+
+      - name: Prepare Artifact Folder
+        run: mkdir -p out/artifact
+
+      - name: Prepare Package
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: | 
+          rm -rf node_modules
+          rm yarn.lock
+          yarn cache clean
+          yarn install
+          npm i -g @vscode/vsce
+
+      - name: Build extension
+        run: |
+          vsce package --yarn -o csharpextension-${GITHUB_REF#refs/tags/}.vsix
+          mv csharpextension-${GITHUB_REF#refs/tags/}.vsix out/artifact/csharpextension-${GITHUB_REF#refs/tags/}.vsix
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: csharpextension-artifact
+          path: out/artifact
+  draft_release:
+    name: Draft Release
+    runs-on: ubuntu-latest
+    needs: create_artifact
+    if: success()
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Get the pushed tag
+        id: get_tag
+        run: echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
+
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: csharpextension-artifact
+          path: out/artifact
+      - run: |
+          mv out/artifact/csharpextension-${GITHUB_REF#refs/tags/}.vsix csharpextension-${GITHUB_REF#refs/tags/}.vsix
+
+      - name: Create Draft Release
+        id: draft_release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "csharpextension-${GITHUB_REF#refs/tags/}.vsix"
+          draft: true
