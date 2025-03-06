@@ -4,12 +4,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-## Unreleased changes
+## 1.10.2 (2025-03-06)
+
+### Continuous Integration
+- version bump to 1.10.2 [`a00c108`](https://github.com/bard83/csharpextensions/commit/a00c108)
+- set patch wording in bump version [`ac1474c`](https://github.com/bard83/csharpextensions/commit/ac1474c)
+- version bump to 1.10.2 [`dc3a147`](https://github.com/bard83/csharpextensions/commit/dc3a147)
+
+### Chore
+- revert patch version bump [`abe67f6`](https://github.com/bard83/csharpextensions/commit/abe67f6)
+- pull bumped version in change log step [`6deca14`](https://github.com/bard83/csharpextensions/commit/6deca14)
+
+## 1.10.1 (2025-03-06)
 
 ### Bug Fixes
 - interrupt extension execution when filename input dialog cancelled [`ddd8bb0`](https://github.com/bard83/csharpextensions/commit/ddd8bb0)
 
+### Continuous Integration
+- version bump to 1.10.1 [`459ede2`](https://github.com/bard83/csharpextensions/commit/459ede2)
+
+### Documentation
+- :robot: changelog file generated [`6292b4d`](https://github.com/bard83/csharpextensions/commit/6292b4d)
+
 ### Chore
+- remove older bump version approach [`a523613`](https://github.com/bard83/csharpextensions/commit/a523613)
+- version package.json to latest plublished [`fe1b86e`](https://github.com/bard83/csharpextensions/commit/fe1b86e)
+- bump version automatically [`dcaddd0`](https://github.com/bard83/csharpextensions/commit/dcaddd0)
 - introduce changelog updpater [`d90a925`](https://github.com/bard83/csharpextensions/commit/d90a925)
 - move types definition in model.d file [`55158b3`](https://github.com/bard83/csharpextensions/commit/55158b3)
 - refine README [`afdef37`](https://github.com/bard83/csharpextensions/commit/afdef37)
