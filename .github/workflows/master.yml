@@ -162,7 +162,11 @@ jobs:
         with:
           name: csharpextension-artifact
           path: out/artifact
-      - run: |
+
+      - name: Move Extension file
+        env:
+          LATEST_TAG: ${{ needs.bump-version.outputs.newTag }}
+        run: |
           mv out/artifact/csharpextension-${LATEST_TAG}.vsix csharpextension-${LATEST_TAG}.vsix
 
       - name: Create Draft Release
