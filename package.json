@@ -4,7 +4,7 @@
     "description": "C# IDE Extension for VSCode",
     "author": "Bard83",
     "license": "MIT",
-    "version": "1.10.0",
+    "version": "1.10.1",
     "publisher": "bard83",
     "engines": {
         "vscode": "^1.84.0"
@@ -262,7 +262,7 @@
                                         "type": "string",
                                         "description": "Used to define all the necessary imports. The namespace will be automatically generated, must be not definied"
                                     },
-                                    "attributes" : {
+                                    "attributes": {
                                         "type": "array",
                                         "items": {
                                             "type": "string"
@@ -276,7 +276,7 @@
                                         "type": "string",
                                         "description": "class or interfaces (extended or implemented) or any other declaration after the name. Colon will always pre-pended"
                                     },
-                                    "genericsWhereClauses" : {
+                                    "genericsWhereClauses": {
                                         "type": "array",
                                         "description": "Defines the where clauses for the generics definition",
                                         "items": {
