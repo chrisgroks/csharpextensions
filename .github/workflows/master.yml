@@ -176,8 +176,8 @@ jobs:
         id: draft_release
         uses: softprops/action-gh-release@v1
         with:
-          files: "csharpextension-${LATEST_TAG}.vsix"
+          files: csharpextension-${{ needs.bump-version.outputs.newTag }}.vsix
           draft: true
-          name: "${LATEST_TAG}"
-          tag_name: "${LATEST_TAG}"
+          name: ${{ needs.bump-version.outputs.newTag }}
+          tag_name: ${{ needs.bump-version.outputs.newTag }}
           repository: "bard83/csharpextensions"
