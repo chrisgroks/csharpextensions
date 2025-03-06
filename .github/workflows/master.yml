@@ -55,6 +55,8 @@ jobs:
         uses:  'paramsinghvc/gh-action-bump-version@master'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          patch-wording: 'patch,fix,fixes,Fix'
       - name: "Output Step"
         env:
           NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
@@ -68,8 +70,6 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
     - name: Pull last commit
       run: |
         git pull
