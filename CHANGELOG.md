@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## 1.10.4 (2025-03-06)
+
+### Continuous Integration
+- version bump to 1.10.4 [`d451849`](https://github.com/bard83/csharpextensions/commit/d451849)
+- use bump-version output [`a3d7ab4`](https://github.com/bard83/csharpextensions/commit/a3d7ab4)
+
+## 1.10.3 (2025-03-06)
+
+### Continuous Integration
+- version bump to 1.10.3 [`c48e363`](https://github.com/bard83/csharpextensions/commit/c48e363)
+- merge create_release into master workflow [`e80c163`](https://github.com/bard83/csharpextensions/commit/e80c163)
+
+### Documentation
+- :robot: changelog file generated [`190f133`](https://github.com/bard83/csharpextensions/commit/190f133)
+
 ## 1.10.2 (2025-03-06)
 
 ### Continuous Integration
