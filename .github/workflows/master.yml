@@ -168,6 +168,7 @@ jobs:
           LATEST_TAG: ${{ needs.bump-version.outputs.newTag }}
         run: |
           mv out/artifact/csharpextension-${LATEST_TAG}.vsix csharpextension-${LATEST_TAG}.vsix
+          ls .
 
       - name: Create Draft Release
         env:
@@ -177,3 +178,6 @@ jobs:
         with:
           files: "csharpextension-${LATEST_TAG}.vsix"
           draft: true
+          name: "${LATEST_TAG}"
+          tag_name: "${LATEST_TAG}"
+          repository: "bard83/csharpextensions"
