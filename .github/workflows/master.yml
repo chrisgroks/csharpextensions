@@ -68,6 +68,11 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Pull last commit
+      run: |
+        git pull
 
     - name: Generate Changelog
       uses: smichard/conventional_changelog@2.0.10
