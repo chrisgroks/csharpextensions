@@ -1,3 +1,7 @@
+# C# Extensions - Open VSX Fork
+
+> **IMPORTANT**: This is a fork of <a href="https://github.com/bard83/csharpextensions">bard83/csharpextensions</a> maintained solely for publishing to the Open VSX marketplace. All credit for this extension goes to the original authors, with the latest version being maintained by bard83. No code changes have been made to the original extension.
+
 # Customized version of <a href="https://github.com/jchannon/csharpextensions">jchannon/csharpextensions</a> → <a href="https://github.com/KreativJos/csharpextensions">KreativJos/csharpextensions</a>  → <a href="https://github.com/bard83/csharpextensions">bard83/csharpextensions</a> 
 
 # C# Extensions

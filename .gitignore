@@ -7,3 +7,4 @@ ovsx.key
 .vscode-test/
 test-results/
 coverage/
+.env
