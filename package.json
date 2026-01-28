@@ -1,7 +1,7 @@
 {
     "name": "csharpextension",
-    "displayName": "C# Extension",
-    "description": "C# IDE Extension for VSCode",
+    "displayName": "C# Extension (Open VSX Fork)",
+    "description": "[Open VSX Fork] C# IDE Extension for VSCode. Unmodified fork of bard83/csharpextensions for Open VSX compatibility.",
     "author": "Bard83",
     "license": "MIT",
     "version": "1.11.1",
