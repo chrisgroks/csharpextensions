@@ -4,7 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## 1.11.2 (2026-01-29)
+
+### Continuous Integration
+- version bump to 1.11.2 [`92832a9`](https://github.com/chrisgroks/csharpextensions/commit/92832a9)
+
+### Documentation
+- :robot: changelog file generated [`3ac7307`](https://github.com/chrisgroks/csharpextensions/commit/3ac7307)
+
+### Other
+- Add automated sync & publish workflow for Open VSX [`4c5a449`](https://github.com/chrisgroks/csharpextensions/commit/4c5a449)
+- Rename to C# Extension Tools and clarify not a language server [`56b27d6`](https://github.com/chrisgroks/csharpextensions/commit/56b27d6)
+- Update displayName and description for Open VSX Fork [`e116faa`](https://github.com/chrisgroks/csharpextensions/commit/e116faa)
+
 ## 1.11.1 (2025-05-18)
+
+## 1.11.0 (2025-05-18)
 
 ### Feature
 - Introduce new multi step input filename [`59c358b`](https://github.com/chrisgroks/csharpextensions/commit/59c358b)
@@ -52,6 +67,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - version bump to 1.10.1 [`459ede2`](https://github.com/chrisgroks/csharpextensions/commit/459ede2)
 
 ### Documentation
+- :robot: changelog file generated [`3ac7307`](https://github.com/chrisgroks/csharpextensions/commit/3ac7307)
 - :robot: changelog file generated [`b658353`](https://github.com/chrisgroks/csharpextensions/commit/b658353)
 - :robot: changelog file generated [`d254539`](https://github.com/chrisgroks/csharpextensions/commit/d254539)
 - :robot: changelog file generated [`242e7e1`](https://github.com/chrisgroks/csharpextensions/commit/242e7e1)
