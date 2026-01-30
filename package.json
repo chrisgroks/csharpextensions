@@ -4,7 +4,7 @@
     "description": "[Open VSX Fork] C# productivity tools for VS Code - adds file templates, code actions, and snippets. NOT a language server (use C# Dev Kit or OmniSharp for IntelliSense). Fork of bard83/csharpextensions for Open VSX compatibility.",
     "author": "Bard83",
     "license": "MIT",
-    "version": "1.11.3",
+    "version": "1.11.4",
     "publisher": "chrisatwindsurf",
     "engines": {
         "vscode": "^1.84.0"
