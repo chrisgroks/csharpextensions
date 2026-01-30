@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-## Unreleased changes
+## 1.11.4 (2026-01-30)
+
+### Continuous Integration
+- version bump to 1.11.4 [`be69c9b`](https://github.com/chrisgroks/csharpextensions/commit/be69c9b)
+
+### Documentation
+- :robot: changelog file generated [`deee796`](https://github.com/chrisgroks/csharpextensions/commit/deee796)
 
 ### Other
 - Fix force_publish boolean input handling [`e265d0f`](https://github.com/chrisgroks/csharpextensions/commit/e265d0f)
