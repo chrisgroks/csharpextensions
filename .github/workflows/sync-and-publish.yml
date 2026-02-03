@@ -62,7 +62,19 @@ jobs:
         run: |
           git remote add upstream https://github.com/bard83/csharpextensions.git
           git fetch upstream master
-          git merge upstream/master --no-edit -m "Sync with upstream (automated)"
+          
+          # Try to merge, handle conflicts by preferring upstream for most files
+          if ! git merge upstream/master --no-edit -m "Sync with upstream (automated)"; then
+            echo "⚠️ Merge conflict detected, resolving..."
+            
+            # For conflicts, prefer upstream version except for package.json (preserve our metadata)
+            git checkout --theirs . || true
+            git checkout --ours package.json || true
+            
+            # Stage all resolved files
+            git add -A
+            git commit -m "Sync with upstream (automated, conflicts resolved)"
+          fi
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -80,7 +92,9 @@ jobs:
           echo "VSIX_FILE=$(ls *.vsix)" >> $GITHUB_ENV
 
       - name: Push sync commit
-        run: git push origin master
+        run: |
+          git pull origin master --rebase || true
+          git push origin master
 
       - name: Create draft release
         uses: softprops/action-gh-release@v1
