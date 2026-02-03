@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## 1.11.5 (2026-02-03)
+
+### Continuous Integration
+- version bump to 1.11.5 [`7b82524`](https://github.com/chrisgroks/csharpextensions/commit/7b82524)
+
+### Documentation
+- :robot: changelog file generated [`aa7839e`](https://github.com/chrisgroks/csharpextensions/commit/aa7839e)
+
+### Other
+- Fix workflow: handle merge conflicts and push failures [`e0dd2b4`](https://github.com/chrisgroks/csharpextensions/commit/e0dd2b4)
+
 ## 1.11.4 (2026-01-30)
 
 ### Continuous Integration
